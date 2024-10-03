@@ -4,6 +4,7 @@ import com.hamgar.foodordering.model.Category;
 import com.hamgar.foodordering.model.Food;
 import com.hamgar.foodordering.model.Restaurant;
 import com.hamgar.foodordering.request.CreateFoodRequest;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -19,8 +20,10 @@ public interface FoodService {
                                          boolean isSeasonal,
                                          String foodCategory
     );
+    public Page<Food> findLimitedFoods(int limit);
 
-    public List<Food> searchFood(String keyword);
+    public List<Food> getAllFood();
+    public List<Food> searchFood(String keyword) ;
 
     public Food findFoodById(Long foodId) throws  Exception;
 

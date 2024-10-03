@@ -6,6 +6,9 @@ import com.hamgar.foodordering.model.Restaurant;
 import com.hamgar.foodordering.repository.FoodRepository;
 import com.hamgar.foodordering.request.CreateFoodRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,6 +64,17 @@ public class FoodServiceImp implements FoodService{
             foods = filterByCategory(foods, foodCategory);
         }
         return foods;
+    }
+
+    @Override
+    public Page<Food> findLimitedFoods(int limit) {
+        Pageable pageable = PageRequest.of(0, limit);
+        return foodRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Food> getAllFood() {
+        return foodRepository.findAll();
     }
 
     private List<Food> filterByCategory(List<Food> foods, String foodCategory) {

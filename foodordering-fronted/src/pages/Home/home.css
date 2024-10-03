@@ -1,0 +1,67 @@
+.c-hero {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    position: relative;
+}
+
+.c-hero .c-hero__slogan-wrapper {
+    min-width: 50%;
+    position: relative;
+
+}
+
+.c-hero .c-hero__slogan-wrapper h1 {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+}
+
+.c-hero__image-wrapper {
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: url('../../assets/c-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.c-hero img {
+    width: 100%;
+    height: 100%;
+    
+
+}
+.c-about-us{
+    max-width: 100%;
+    display: flex;
+    padding: 200px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(255, 249, 242);
+}
+.c-about-us__features-wrapper {
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    justify-items: center;
+    
+    
+}
+
+.c-about-us__text{
+    
+    padding: 0 80px;
+    align-content: center;
+}
+
+.c-about-us__text p{
+    max-width: 700px;
+}
+

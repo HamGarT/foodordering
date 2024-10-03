@@ -9,9 +9,12 @@ import com.hamgar.foodordering.service.FoodService;
 import com.hamgar.foodordering.service.RestaurantService;
 import com.hamgar.foodordering.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.awt.print.Pageable;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/admin/food")
@@ -26,7 +29,7 @@ public class AdminFoodController {
     @Autowired
     private RestaurantService restaurantService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Food> createFood(@RequestBody CreateFoodRequest req,
                                            @RequestHeader("Authorization") String jwt) throws Exception{
 
@@ -60,5 +63,13 @@ public class AdminFoodController {
         return new ResponseEntity<>(food, HttpStatus.CREATED);
 
     }
+
+    @GetMapping
+    public ResponseEntity<Page<Food>> getLimitedFoods(
+            @RequestParam("limit") int limit) throws Exception{
+        Page<Food> foods = foodService.findLimitedFoods(limit);
+        return new ResponseEntity<>(foods, HttpStatus.OK);
+    }
+
 
 }

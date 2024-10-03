@@ -8,6 +8,7 @@ import com.hamgar.foodordering.service.FoodService;
 import com.hamgar.foodordering.service.RestaurantService;
 import com.hamgar.foodordering.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +39,10 @@ public class FoodController {
 
     }
 
+    // example queries
+    // restaurant/123?vegetarian=true&nonveg=false&seasonal=false
+    //POST /restaurant/456?vegetarian=false&nonveg=true&seasonal=true
+    //Authorization: Bearer your_jwt_token
     @PostMapping("/restaurant/{restaurantId}")
     public ResponseEntity<List<Food>> getRestaurantFood (
             @RequestParam boolean vegetarian,
@@ -53,6 +58,18 @@ public class FoodController {
 
     }
 
+    /*@GetMapping
+    public ResponseEntity<List<Food>> getLimitedFoods(
+            @RequestParam("limit") int limit) throws Exception{
+        List<Food> foods = foodService.findLimitedFoods(limit);
+        return new ResponseEntity<>(foods, HttpStatus.OK);
+    }*/
 
+    @GetMapping
+    public ResponseEntity<List<Food>> getLimitedFoods(
+             ) throws Exception{
+        List<Food> foods = foodService.getAllFood();
+        return new ResponseEntity<>(foods, HttpStatus.OK);
+    }
 
 }

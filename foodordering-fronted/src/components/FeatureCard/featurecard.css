@@ -1,0 +1,47 @@
+.feature-card{
+    width: 260px;
+    height: 300px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    text-align: center;
+    place-content: center;
+    box-shadow: 1px 4px 24px -9px rgba(0,0,0,0.48);
+}
+
+.feature-card:hover{
+    background-color: rgb(255, 20, 98);
+    color: #ffffff;
+}
+.feature-card:hover .feature-card__icon{
+    color: #ffffff;
+}
+.feature-card__icon{
+    font-size: 3rem;
+    color: rgb(255, 20, 98);
+}
+
+.feature-card--wcolor{
+    background: rgb(255, 20, 98);
+    color: #ffffff;
+}
+
+.feature-card--wcolor .feature-card__icon{
+    color: #ffffff;
+}
+
+.feature-card--wcolor:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.feature-card--wcolor:hover .feature-card__icon{
+    color: rgb(255, 20, 98);
+}
+
+.feature-card--top{
+    transform: translateY(-40px);
+}
+
+.feature-card--bottom{
+    transform: translateY(40px);
+}

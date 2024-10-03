@@ -22,6 +22,7 @@ public class IngredientCategory {
     @JsonIgnore
     @ManyToOne
     private Restaurant restaurant;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL) // un IngredientCategory tiene muchos ingredients o una categoria puede tener muchos ingedientes en su rango
     private List<IngredientItem> ingredients = new ArrayList<>();
 }
