@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('../assets/fonts/HelveticaNowDisplay-Regular.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('../assets/fonts/HelveticaNowDisplay-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('../assets/fonts/HelveticaNowDisplay-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MYingPRC';
+    src: url('../assets/fonts/MYingHeiPRCW48W5.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}

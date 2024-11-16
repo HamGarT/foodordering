@@ -25,8 +25,10 @@ public class AppConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.sessionManagement(managment -> managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(Authorize -> Authorize
-                        .requestMatchers("/api/admin/**").hasAnyRole("RESTAURANT_OWNER", "ADMIN")
+                        .requestMatchers("/api/food").permitAll()
+                        .requestMatchers("/api/admin/**").hasAnyRole("RESTAURANT_OWNER", "ADMIN") //No Need for .authenticated(): Since hasAnyRole requires users to be authenticated, you don’t need to add .authenticated() afterward.
                         .requestMatchers("/api/**").authenticated()
+
                         .anyRequest().permitAll()
                 ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
                 .csrf( csrf -> csrf.disable())
@@ -40,7 +42,8 @@ public class AppConfig {
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg = new CorsConfiguration();
                 cfg.setAllowedOrigins(Arrays.asList(
-                        "http://localhost:3000/"
+                        "http://localhost:3000/",
+                        "http://localhost:5173/"
 
                 ));
                 cfg.setAllowedMethods(Collections.singletonList("*"));

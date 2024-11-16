@@ -3,46 +3,58 @@
     height: 90vh;
     display: flex;
     position: relative;
+    padding: 0 40px;
+
 }
 
 .c-hero .c-hero__slogan-wrapper {
-    min-width: 50%;
+    width: 50%;
     position: relative;
 
 }
 
 .c-hero .c-hero__slogan-wrapper h1 {
-    position: absolute;
+    padding: 0;
     width: 100%;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
+    top: 0;
+    font-size: 128px;
+    font-family: 'Helvetica Now Display';
+    font-weight: 900;
+    z-index: 999;
 }
 
 .c-hero__image-wrapper {
+    position: relative;
     width: 50%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-image: url('../../assets/c-hero.png');
-    background-size: cover;
+    /* background-image: url('../../assets/images/imageHOME.png'); */
+    background-size: contain;
+    background-position: top;
     background-repeat: no-repeat;
 }
 
 .c-hero img {
     width: 100%;
     height: 100%;
-    
+
 
 }
-.c-about-us{
+
+.c-about-us {
     max-width: 100%;
     display: flex;
     padding: 200px 0;
+    margin-top: 80px;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(255, 249, 242);
+    background-image: url("../../assets/pexels-goumbik-349609.png");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-color: rgb(255, 249, 242); */
 }
+
 .c-about-us__features-wrapper {
     width: 30%;
     display: grid;
@@ -51,17 +63,112 @@
     gap: 30px;
     justify-content: center;
     justify-items: center;
-    
-    
+
+
 }
 
-.c-about-us__text{
-    
+.c-about-us__text {
+
     padding: 0 80px;
     align-content: center;
 }
 
-.c-about-us__text p{
+.c-about-us__text h2{
+    font-size: 96px;
+}
+
+.c-about-us__text p {
     max-width: 700px;
 }
 
+.c-banner {
+    width: 100%;
+    height: 400px;
+
+
+}
+
+.c-hero__data-home div {
+    display: flex;
+}
+
+.c-hero__glass-panel {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    font-size: 50px;
+    width: 400px;
+    padding: 20px;
+    color: #ffffff;
+    background: rgba(156, 149, 149, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.9px);
+    -webkit-backdrop-filter: blur(13.9px);
+}
+
+.c-hero__glass-panel div {
+    width: 60px;
+    height: 60px;
+    display: block;
+    background-image: url('../../assets/icons/arrow.png');
+    background-size: cover;
+    transform: translateX(calc(400px - 100px));
+}
+
+.c-hero__text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.c-hero__text span:first-child{
+    background-color: #FE4448;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.c-hero__text span:nth-last-child(1){
+    width: 300px;
+    font-size: 20px;
+}
+
+.c-hero__stadistics{
+    font-size: 44px;
+    padding: 5px 20px;
+}
+
+.c-hero__stadistic-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
+
+}
+.c-hero__stadistic-item p{
+    font-size: 20px;
+}
+
+.c-hero__stadistic-item div span{
+    color:#FE4448
+}
+
+@media (max-width: 600px) {
+    .c-about-us {
+
+        background-image: url("../../assets/pexels-goumbik-349609.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+
+    }
+
+    .c-about-us__features-wrapper {
+        width: 100%;
+        /* Ancho completo */
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 columna */
+        gap: 20px;
+        /* Espacio más pequeño */
+    }
+}

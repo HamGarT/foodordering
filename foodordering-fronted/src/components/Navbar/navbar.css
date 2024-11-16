@@ -1,7 +1,28 @@
 .c-navbar{
     height: 80px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Helvetica Now Display';
+    font-weight: 600;
+    padding: 0 20px;
+    align-items: center;
 }
 
-.c-navbar__icon-cart{
-    color: red;
+.c-navbar a{
+    text-decoration: none;
+    color: #FE4448;
+    font-size: 24px;
+}
+
+.c-navbar__icon{
+    border: 1px #000000 solid;
+    border-radius: 50%;
+    padding: 4px;
+}
+.c-navbar__option-wrapper{
+    display: flex;
+}
+
+.c-navbar__icon{
+    margin-left: 20px;
 }

@@ -2,7 +2,7 @@
     width: 260px;
     height: 300px;
     border-radius: 30px;
-    background-color: #ffffff;
+    background-color: #FE4448;
     text-align: center;
     place-content: center;
     box-shadow: 1px 4px 24px -9px rgba(0,0,0,0.48);
@@ -21,7 +21,7 @@
 }
 
 .feature-card--wcolor{
-    background: rgb(255, 20, 98);
+    background: #FE4448;
     color: #ffffff;
 }
 
@@ -44,4 +44,14 @@
 
 .feature-card--bottom{
     transform: translateY(40px);
+}
+
+@media (max-width: 600px) {
+    .feature-card--top{
+        transform: translateY(0px);
+    }
+    
+    .feature-card--bottom{
+        transform: translateY(0px);
+    }
 }

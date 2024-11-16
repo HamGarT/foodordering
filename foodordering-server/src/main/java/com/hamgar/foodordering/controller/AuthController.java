@@ -26,7 +26,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthController {
+public class  AuthController {
     @Autowired
     private UserRepository userRepository;
     @Autowired

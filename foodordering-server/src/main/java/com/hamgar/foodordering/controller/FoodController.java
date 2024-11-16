@@ -66,9 +66,9 @@ public class FoodController {
     }*/
 
     @GetMapping
-    public ResponseEntity<List<Food>> getLimitedFoods(
-             ) throws Exception{
-        List<Food> foods = foodService.getAllFood();
+    public ResponseEntity<Page<Food>> getLimitedFoods(
+            @RequestParam("limit") int limit) throws Exception{
+        Page<Food> foods = foodService.findLimitedFoods(limit);
         return new ResponseEntity<>(foods, HttpStatus.OK);
     }
 
